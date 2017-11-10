@@ -16,6 +16,7 @@ public class ZooTest {
     Lion lion2;
     Monkey monkey;
     Zoo zoo;
+    Person person;
 
     @Before
     public void before() {
@@ -25,6 +26,7 @@ public class ZooTest {
         lion2 = new Lion();
         monkey = new Monkey();
         zoo = new Zoo();
+        person = new Person();
     }
 
 
@@ -73,6 +75,18 @@ public class ZooTest {
         zoo.sellAnimal(lion);
         assertEquals(1, lionEnclosure.getAnimalAmount());
         assertEquals(90, zoo.getMoney());
+    }
+
+    @Test
+    public void visitorsStartsEmpty() {
+        assertEquals(0, zoo.getAmountOfVisitors());
+    }
+
+    @Test
+    public void canAddVisitors() {
+        person.visitZoo(zoo);
+        assertEquals(5, zoo.getMoney());
+        assertEquals(1, zoo.getAmountOfVisitors());
     }
 
 }

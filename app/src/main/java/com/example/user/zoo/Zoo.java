@@ -9,11 +9,15 @@ import java.util.ArrayList;
 public class Zoo {
 
     private ArrayList<Enclosure> enclosures;
+    private ArrayList<Person> visitors;
     private int money;
+    private int ticketPrice;
 
     public Zoo() {
         this.enclosures = new ArrayList();
+        this.visitors = new ArrayList();
         this.money = 0;
+        this.ticketPrice = 5;
     }
 
     public void add(Enclosure enclosure) {
@@ -59,5 +63,25 @@ public class Zoo {
 
     public int getMoney() {
         return money;
+    }
+
+    public int getTicketPrice() {
+        return this.ticketPrice;
+    }
+
+    public void sellTicket() {
+        this.money += this.getTicketPrice();
+    }
+
+    public void addVisitor(Person visitor) {
+        this.visitors.add(visitor);
+    }
+
+    public ArrayList getVisitors() {
+        return this.visitors;
+    }
+
+    public int getAmountOfVisitors() {
+        return this.visitors.size();
     }
 }
