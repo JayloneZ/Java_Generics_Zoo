@@ -35,4 +35,14 @@ public class Zoo {
 
         return totalAnimals;
     }
+
+    public int getTotalValue() {
+        int totalValue = 0;
+
+        for ( Enclosure enclosure : this.enclosures ) {
+            totalValue += enclosure.getTotalValue();
+        }
+
+        return totalValue;
+    }
 }

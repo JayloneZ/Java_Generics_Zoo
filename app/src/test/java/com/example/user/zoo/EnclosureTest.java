@@ -47,4 +47,11 @@ public class EnclosureTest {
         assertEquals(0, lionEnclosure.getAnimalAmount());
     }
 
+    @Test
+    public void canGetTotalValue() {
+        lionEnclosure.add(lion);
+        lionEnclosure.add(lion2);
+        assertEquals(180, lionEnclosure.getTotalValue());
+    }
+
 }

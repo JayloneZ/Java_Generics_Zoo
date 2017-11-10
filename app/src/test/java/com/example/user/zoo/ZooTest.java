@@ -13,6 +13,7 @@ public class ZooTest {
     Enclosure<Lion> lionEnclosure;
     Enclosure<Monkey> monkeyEnclosure;
     Lion lion;
+    Lion lion2;
     Monkey monkey;
     Zoo zoo;
 
@@ -21,6 +22,7 @@ public class ZooTest {
         lionEnclosure = new Enclosure();
         monkeyEnclosure = new Enclosure();
         lion = new Lion();
+        lion2 = new Lion();
         monkey = new Monkey();
         zoo = new Zoo();
     }
@@ -49,17 +51,18 @@ public class ZooTest {
         zoo.add(lionEnclosure);
         zoo.add(monkeyEnclosure);
         lionEnclosure.add(lion);
+        lionEnclosure.add(lion2);
         monkeyEnclosure.add(monkey);
-        assertEquals(2, zoo.getTotalAmountOfAnimals());
+        assertEquals(3, zoo.getTotalAmountOfAnimals());
     }
 
-//    @Test
-//    public void canCalculateTotal() {
-//        zoo.add(monkeyEnclosure);
-//        zoo.add(lionEnclosure);
-//        monkeyEnclosure.add(monkey);
-//        lionEnclosure.add(lion);
-//        assertEquals(130, zoo.getTotalValue());
-//    }
+    @Test
+    public void canCalculateTotal() {
+        zoo.add(monkeyEnclosure);
+        zoo.add(lionEnclosure);
+        monkeyEnclosure.add(monkey);
+        lionEnclosure.add(lion);
+        assertEquals(130, zoo.getTotalValue());
+    }
 
 }

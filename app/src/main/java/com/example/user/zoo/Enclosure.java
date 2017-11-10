@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by user on 10/11/2017.
  */
 
-public class Enclosure<T> {
+public class Enclosure<T extends Animal> {
 
     private ArrayList<T> animals;
 
@@ -34,11 +34,14 @@ public class Enclosure<T> {
         return this.animals.size();
     }
 
-//    public int getTotalValue() {
-//        int totalValue = 0;
-//        for ( T animal : this.animals ) {
-//            totalValue += animal.getCashValue();
-//        }
-//    }
+    public int getTotalValue() {
+        int totalValue = 0;
+
+        for ( T animal : this.animals ) {
+            totalValue += animal.getCashValue();
+        }
+
+        return totalValue;
+    }
 
 }
