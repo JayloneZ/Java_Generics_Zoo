@@ -26,10 +26,23 @@ public class EnclosureTest {
     }
 
     @Test
+    public void canTakeAnimals() {
+        lionEnclosure.add(lion);
+        assertEquals(1, lionEnclosure.getAnimalAmount());
+    }
+
+    @Test
     public void canTakeMultipleAnimalsOfSameType() {
         lionEnclosure.add(lion);
         lionEnclosure.add(lion2);
         assertEquals(2, lionEnclosure.getAnimalAmount());
+    }
+
+    @Test
+    public void canRemoveAnimals() {
+        lionEnclosure.add(lion);
+        lionEnclosure.remove(lion);
+        assertEquals(0, lionEnclosure.getAnimalAmount());
     }
 
 }

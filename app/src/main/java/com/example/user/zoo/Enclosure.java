@@ -18,7 +18,12 @@ public class Enclosure<T> {
         this.animals.add(animal);
     }
 
+    public void remove(T animal) {
+        this.animals.remove(animal);
+    }
+
     public int getAnimalAmount() {
         return this.animals.size();
     }
+
 }
