@@ -11,11 +11,17 @@ import static org.junit.Assert.assertEquals;
 
 public class ZooTest {
     Enclosure<Lion> lionEnclosure;
+    Enclosure<Monkey> monkeyEnclosure;
+    Lion lion;
+    Monkey monkey;
     Zoo zoo;
 
     @Before
     public void before() {
         lionEnclosure = new Enclosure();
+        monkeyEnclosure = new Enclosure();
+        lion = new Lion();
+        monkey = new Monkey();
         zoo = new Zoo();
     }
 
@@ -37,5 +43,23 @@ public class ZooTest {
         zoo.remove(lionEnclosure);
         assertEquals(0, zoo.getAmountOfEnclosures());
     }
+
+    @Test
+    public void canCountTotalAnimals() {
+        zoo.add(lionEnclosure);
+        zoo.add(monkeyEnclosure);
+        lionEnclosure.add(lion);
+        monkeyEnclosure.add(monkey);
+        assertEquals(2, zoo.getTotalAmountOfAnimals());
+    }
+
+//    @Test
+//    public void canCalculateTotal() {
+//        zoo.add(monkeyEnclosure);
+//        zoo.add(lionEnclosure);
+//        monkeyEnclosure.add(monkey);
+//        lionEnclosure.add(lion);
+//        assertEquals(130, zoo.getTotalValue());
+//    }
 
 }

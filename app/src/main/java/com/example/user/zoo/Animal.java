@@ -4,9 +4,9 @@ package com.example.user.zoo;
  * Created by user on 10/11/2017.
  */
 
-public class Animal {
+public abstract class Animal {
 
-    int cashValue;
+    private int cashValue;
 
     public Animal(int cashValue) {
         this.cashValue = cashValue;

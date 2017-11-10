@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Enclosure<T> {
 
-    ArrayList<T> animals;
+    private ArrayList<T> animals;
 
     public Enclosure() {
         this.animals = new ArrayList();
@@ -25,5 +25,20 @@ public class Enclosure<T> {
     public int getAnimalAmount() {
         return this.animals.size();
     }
+
+    public ArrayList getAnimals() {
+        return this.animals;
+    }
+
+    public int getAmount() {
+        return this.animals.size();
+    }
+
+//    public int getTotalValue() {
+//        int totalValue = 0;
+//        for ( T animal : this.animals ) {
+//            totalValue += animal.getCashValue();
+//        }
+//    }
 
 }

@@ -11,12 +11,14 @@ import static org.junit.Assert.assertEquals;
 
 public class EnclosureTest {
     Enclosure<Lion> lionEnclosure;
-    Lion lion2;
     Lion lion;
+    Lion lion2;
 
     @Before
     public void before() {
         lionEnclosure = new Enclosure();
+        lion = new Lion();
+        lion2 = new Lion();
     }
 
 

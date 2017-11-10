@@ -14,8 +14,8 @@ public class AnimalTest {
 
     @Before
     public void before() {
-        monkey = new Monkey(40);
-        lion = new Lion(90);
+        monkey = new Monkey();
+        lion = new Lion();
     }
 
     @Test

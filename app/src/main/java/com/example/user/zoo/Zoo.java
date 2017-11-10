@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Zoo {
 
-    ArrayList<Enclosure> enclosures;
+    private ArrayList<Enclosure> enclosures;
 
     public Zoo() {
         this.enclosures = new ArrayList();
@@ -24,5 +24,15 @@ public class Zoo {
 
     public void remove(Enclosure enclosure) {
         this.enclosures.remove(enclosure);
+    }
+
+    public int getTotalAmountOfAnimals() {
+        int totalAnimals = 0;
+
+        for ( Enclosure enclosure : this.enclosures ) {
+            totalAnimals += enclosure.getAmount();
+        }
+
+        return totalAnimals;
     }
 }

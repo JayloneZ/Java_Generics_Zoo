@@ -6,7 +6,7 @@ package com.example.user.zoo;
 
 public class Lion extends Animal {
 
-    public Lion(int cashValue) {
-        super(cashValue);
+    public Lion() {
+        super(90);
     }
 }
