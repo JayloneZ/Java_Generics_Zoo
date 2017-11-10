@@ -65,4 +65,14 @@ public class ZooTest {
         assertEquals(130, zoo.getTotalValue());
     }
 
+    @Test
+    public void canSellAnimal() {
+        zoo.add(lionEnclosure);
+        lionEnclosure.add(lion);
+        lionEnclosure.add(lion2);
+        zoo.sellAnimal(lion);
+        assertEquals(1, lionEnclosure.getAnimalAmount());
+        assertEquals(90, zoo.getMoney());
+    }
+
 }

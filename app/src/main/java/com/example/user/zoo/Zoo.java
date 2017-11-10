@@ -9,9 +9,11 @@ import java.util.ArrayList;
 public class Zoo {
 
     private ArrayList<Enclosure> enclosures;
+    private int money;
 
     public Zoo() {
         this.enclosures = new ArrayList();
+        this.money = 0;
     }
 
     public void add(Enclosure enclosure) {
@@ -44,5 +46,18 @@ public class Zoo {
         }
 
         return totalValue;
+    }
+
+    public void sellAnimal(Animal animal) {
+        for ( Enclosure enclosure : this.enclosures ) {
+            if (enclosure.getAnimals().contains(animal)) {
+                this.money += animal.getCashValue();
+                enclosure.remove(animal);
+            }
+        }
+    }
+
+    public int getMoney() {
+        return money;
     }
 }
