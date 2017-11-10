@@ -18,6 +18,13 @@ public class EnclosureTest {
     public void before() {
         lionEnclosure = new Enclosure();
     }
+
+
+    @Test
+    public void enclosureStartsEmpty() {
+        assertEquals(0, lionEnclosure.getAnimalAmount());
+    }
+
     @Test
     public void canTakeMultipleAnimalsOfSameType() {
         lionEnclosure.add(lion);
