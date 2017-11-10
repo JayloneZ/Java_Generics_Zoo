@@ -13,4 +13,12 @@ public class Enclosure<T> {
     public Enclosure() {
         this.animals = new ArrayList();
     }
+
+    public void add(T animal) {
+        this.animals.add(animal);
+    }
+
+    public int getAnimalAmount() {
+        return this.animals.size();
+    }
 }
