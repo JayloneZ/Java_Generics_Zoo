@@ -21,4 +21,8 @@ public class Zoo {
     public int getAmountOfEnclosures() {
         return enclosures.size();
     }
+
+    public void remove(Enclosure enclosure) {
+        this.enclosures.remove(enclosure);
+    }
 }

@@ -31,4 +31,11 @@ public class ZooTest {
         assertEquals(1, zoo.getAmountOfEnclosures());
     }
 
+    @Test
+    public void canRemoveEnclosures() {
+        zoo.add(lionEnclosure);
+        zoo.remove(lionEnclosure);
+        assertEquals(0, zoo.getAmountOfEnclosures());
+    }
+
 }
